@@ -25,9 +25,10 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Hi, what would you like to learn about this legal case?',
+        message: 'Hi, I am an experimental AI that helps simplify the science around sleep, jet lag and napping in athletes. How can I help 😀 ?',
         type: 'apiMessage',
       },
+      
     ],
     history: [],
   });
@@ -120,13 +121,18 @@ export default function Home() {
     }
   };
 
+  
+
   return (
     <>
       <Layout>
         <div className="mx-auto flex flex-col gap-4">
-          <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
-            Chat With Your Legal Docs
-          </h1>
+        <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
+  😴 Athlete sleep <i style={{fontStyle: 'italic'}}>ai</i>-der
+</h1>
+<p className="text-xs text-center mt-2">
+  *Note: This tool is currently experimental and the results should not be taken as professional advice.
+</p>
           <main className={styles.main}>
             <div className={styles.cloud}>
               <div ref={messageListRef} className={styles.messagelist}>
@@ -224,7 +230,7 @@ export default function Home() {
                     placeholder={
                       loading
                         ? 'Waiting for response...'
-                        : 'What is this legal case about?'
+                        : 'e.g. Is sport performance impacted when athletes do not get sufficient sleep?'
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
@@ -260,11 +266,24 @@ export default function Home() {
             )}
           </main>
         </div>
-        <footer className="m-auto p-4">
-          <a href="https://twitter.com/mayowaoshin">
-            Powered by LangChainAI. Demo built by Mayo (Twitter: @mayowaoshin).
-          </a>
-        </footer>
+
+        <footer className="m-auto p-4 flex flex-col items-center">
+  <div className="text-xs mb-2">
+    <span>Note: Our information is based on notable research in the field. Some papers that we rely on include:</span>
+    <ul className="list-disc pl-4">
+    <li><a href="https://bjsm.bmj.com/content/55/7/356" target="_blank" rel="noopener noreferrer"><i>Sleep and the athlete: narrative review and 2021 expert consensus recommendations</i></a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/34263388/" target="_blank" rel="noopener noreferrer"><i>Managing Travel Fatigue and Jet Lag in Athletes: A Review and Consensus Statement</i></a></li>
+      <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8238550/" target="_blank" rel="noopener noreferrer"><i>To Nap or Not to Nap? A Systematic Review Evaluating Napping Behavior in Athletes and the Impact on Various Measures of Athletic Performance</i></a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/34043185/" target="_blank" rel="noopener noreferrer"><i>Benefits of Daytime Napping Opportunity on Physical and Cognitive Performances in Physically Active Participants: A Systematic Review</i></a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/36014779/" target="_blank" rel="noopener noreferrer"><i>The Impact of Dietary Factors on the Sleep of Athletically Trained Populations: A Systematic Review</i></a></li>
+      <li><a href="https://sportsmedicine-open.springeropen.com/articles/10.1186/s40798-022-00470-7" target="_blank" rel="noopener noreferrer"><i>Sleep Regularity and Predictors of Sleep Efficiency and Sleep Duration in Elite Team Sport Athletes</i></a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/32325024/" target="_blank" rel="noopener noreferrer"><i>Deconstructing athletes’ sleep: A systematic review of the influence of age, sex, athletic expertise, sport type, and season on sleep characteristics</i></a></li>
+    </ul>
+  </div>
+  <a href="https://twitter.com/hareshsuppiah" target="_blank" rel="noopener noreferrer" className="flex items-center">
+    <span className="mr-2">🐦</span> Built by @hareshsuppiah
+  </a>
+</footer>
       </Layout>
     </>
   );
